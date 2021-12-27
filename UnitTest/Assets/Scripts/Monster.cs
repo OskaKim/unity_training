@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
-    [SerializeField] private int hp = 100;
+    public int Hp { get; set; } = 100;
     [SerializeField] private Text text;
     public void Damaged(int damage){
-        hp = Math.Max(0, hp - damage);
-        text.text = hp == 0 ? "died!" : $"I'm monster\nhp is {hp}";
+        Hp = Math.Max(0, Hp - damage);
+        text.text = Hp == 0 ? "died!" : $"I'm monster\nHp is {Hp}";
     }
 }
